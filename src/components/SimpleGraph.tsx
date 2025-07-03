@@ -58,27 +58,29 @@ const SimpleGraph = ({ data }: SimpleGraphProps) => {
         top: '20px',
         left: '20px',
         zIndex: 1000,
-        color: '#333',
+        color: '#ffffff',
         fontSize: '24px',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        textShadow: '0 0 10px rgba(100, 200, 255, 0.5)'
       }}>
         Code Analysis - Entity & Relationship Extraction
       </div>
 
       {/* Scan Results Summary Panel */}
-      <div style={{
+      <div className="panel" style={{
         position: 'absolute',
         top: '80px',
         left: '20px',
-        background: 'rgba(255, 255, 255, 0.95)',
+        background: 'rgba(10, 10, 30, 0.9)',
         padding: '20px',
         borderRadius: '12px',
-        boxShadow: '0 4px 15px rgba(0,0,0,0.15)',
+        boxShadow: '0 8px 32px rgba(0, 100, 200, 0.3)',
         zIndex: 1000,
         minWidth: '200px',
-        border: '1px solid #e0e0e0'
+        border: '1px solid rgba(100, 200, 255, 0.3)',
+        backdropFilter: 'blur(10px)'
       }}>
-        <h3 style={{ margin: '0 0 15px 0', color: '#333', fontSize: '16px' }}>Scan Results</h3>
+        <h3 style={{ margin: '0 0 15px 0', color: '#ffffff', fontSize: '16px' }}>Scan Results</h3>
         <div style={{ 
           color: '#ff0000', 
           fontWeight: 'bold', 
@@ -110,34 +112,116 @@ const SimpleGraph = ({ data }: SimpleGraphProps) => {
           Good Code: {goodCode}
         </div>
         <div style={{ 
-          color: '#666', 
+          color: '#aaaaaa', 
           fontSize: '14px', 
-          borderTop: '1px solid #eee',
+          borderTop: '1px solid rgba(100, 200, 255, 0.3)',
           paddingTop: '8px'
         }}>
           Total Entities: {data.nodes.length}
         </div>
-        <div style={{ color: '#666', fontSize: '14px' }}>
+        <div style={{ color: '#aaaaaa', fontSize: '14px' }}>
           Relationships: {data.links.length}
         </div>
       </div>
 
-      {/* Very Basic Graph with Visible Edges */}
+      {/* Beautiful Curved Graph with Flowing Edges */}
       <ForceGraph3D
         ref={graphRef}
         graphData={data}
         nodeColor={(node: any) => {
-          if (node.confidence < 0.5) return 'red';
-          if (node.confidence < 0.8) return 'orange';
-          return 'green';
+          if (node.confidence < 0.5) return '#ff4444';
+          if (node.confidence < 0.8) return '#ff8800';
+          return '#44ff44';
         }}
+        nodeSize={8}
         nodeLabel={() => ''}
-        linkColor={() => '#666666'}
-        linkWidth={1.5}
-        linkOpacity={0.7}
-        linkDirectionalArrowLength={4}
+        linkColor={(link: any) => {
+          // Color edges based on relationship type
+          const colors = {
+            'contains': '#ff69b4',      // Pink
+            'uses': '#00ffff',          // Cyan
+            'calls': '#90ee90',         // Light Green
+            'exports': '#ffa500',       // Orange
+            'routes_to': '#9370db',     // Purple
+            'accesses': '#ff6347',      // Tomato
+            'reads': '#20b2aa',         // Light Sea Green
+            'validates': '#dda0dd',     // Plum
+            'assigns': '#f0e68c',       // Khaki
+            'imports': '#87ceeb',       // Sky Blue
+            'protected_by': '#dc143c',  // Crimson
+            'logs_via': '#32cd32',      // Lime Green
+            'configures_with': '#ff1493', // Deep Pink
+            'queues_via': '#00ced1',    // Dark Turquoise
+            'stores_in': '#ffd700',     // Gold
+            'decrypts_with': '#ba55d3', // Medium Orchid
+            'called_by': '#ff7f50',     // Coral
+            'logs_to': '#98fb98',       // Pale Green
+            'caches': '#add8e6',        // Light Blue
+            'protects': '#f4a460'       // Sandy Brown
+          };
+          return colors[link.label] || '#66ffff';
+        }}
+        linkWidth={(link: any) => {
+          // Vary width based on relationship importance
+          const importantTypes = ['contains', 'uses', 'calls', 'exports'];
+          return importantTypes.includes(link.label) ? 3 : 2;
+        }}
+        linkOpacity={0.8}
+        linkCurvature={(link: any) => {
+          // Create beautiful curved edges with varying curvature
+          const curvatures = {
+            'contains': 0.3,
+            'uses': 0.5,
+            'calls': 0.4,
+            'exports': 0.2,
+            'routes_to': 0.6,
+            'accesses': 0.35,
+            'reads': 0.45,
+            'validates': 0.25,
+            'assigns': 0.55,
+            'imports': 0.4,
+            'protected_by': 0.3,
+            'logs_via': 0.5,
+            'configures_with': 0.6,
+            'queues_via': 0.35,
+            'stores_in': 0.4,
+            'decrypts_with': 0.55,
+            'called_by': 0.3,
+            'logs_to': 0.45,
+            'caches': 0.25,
+            'protects': 0.5
+          };
+          return curvatures[link.label] || 0.4;
+        }}
+        linkDirectionalArrowLength={6}
         linkDirectionalArrowRelPos={1}
-        backgroundColor="white"
+        linkDirectionalArrowColor={(link: any) => {
+          // Match arrow color to link color
+          const colors = {
+            'contains': '#ff69b4',
+            'uses': '#00ffff',
+            'calls': '#90ee90',
+            'exports': '#ffa500',
+            'routes_to': '#9370db',
+            'accesses': '#ff6347',
+            'reads': '#20b2aa',
+            'validates': '#dda0dd',
+            'assigns': '#f0e68c',
+            'imports': '#87ceeb',
+            'protected_by': '#dc143c',
+            'logs_via': '#32cd32',
+            'configures_with': '#ff1493',
+            'queues_via': '#00ced1',
+            'stores_in': '#ffd700',
+            'decrypts_with': '#ba55d3',
+            'called_by': '#ff7f50',
+            'logs_to': '#98fb98',
+            'caches': '#add8e6',
+            'protects': '#f4a460'
+          };
+          return colors[link.label] || '#66ffff';
+        }}
+        backgroundColor="#000011"
         onNodeHover={(node) => setHoveredNode(node)}
         enableNodeDrag={false}
         enableNavigationControls={true}
@@ -145,18 +229,19 @@ const SimpleGraph = ({ data }: SimpleGraphProps) => {
       />
 
       {/* Legend */}
-      <div style={{
+      <div className="panel" style={{
         position: 'absolute',
         bottom: '20px',
         left: '20px',
-        background: 'rgba(255, 255, 255, 0.95)',
+        background: 'rgba(10, 10, 30, 0.9)',
         padding: '15px',
         borderRadius: '12px',
-        boxShadow: '0 4px 15px rgba(0,0,0,0.15)',
+        boxShadow: '0 8px 32px rgba(0, 100, 200, 0.3)',
         zIndex: 1000,
-        border: '1px solid #e0e0e0'
+        border: '1px solid rgba(100, 200, 255, 0.3)',
+        backdropFilter: 'blur(10px)'
       }}>
-        <h4 style={{ margin: '0 0 10px 0', color: '#333', fontSize: '14px' }}>Legend</h4>
+        <h4 style={{ margin: '0 0 10px 0', color: '#ffffff', fontSize: '14px' }}>Legend</h4>
         <div style={{ display: 'flex', alignItems: 'center', marginBottom: '6px' }}>
           <div style={{ 
             width: '14px', 
@@ -165,7 +250,7 @@ const SimpleGraph = ({ data }: SimpleGraphProps) => {
             borderRadius: '50%', 
             marginRight: '10px' 
           }}></div>
-          <span style={{ fontSize: '12px', color: '#333' }}>Critical - Needs Immediate Fix</span>
+          <span style={{ fontSize: '12px', color: '#ffffff' }}>Critical - Needs Immediate Fix</span>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', marginBottom: '6px' }}>
           <div style={{ 
@@ -175,7 +260,7 @@ const SimpleGraph = ({ data }: SimpleGraphProps) => {
             borderRadius: '50%', 
             marginRight: '10px' 
           }}></div>
-          <span style={{ fontSize: '12px', color: '#333' }}>Warning - Should be Improved</span>
+          <span style={{ fontSize: '12px', color: '#ffffff' }}>Warning - Should be Improved</span>
         </div>
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <div style={{ 
@@ -185,7 +270,7 @@ const SimpleGraph = ({ data }: SimpleGraphProps) => {
             borderRadius: '50%', 
             marginRight: '10px' 
           }}></div>
-          <span style={{ fontSize: '12px', color: '#333' }}>Good - High Quality</span>
+          <span style={{ fontSize: '12px', color: '#ffffff' }}>Good - High Quality</span>
         </div>
       </div>
 

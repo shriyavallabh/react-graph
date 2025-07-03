@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  background: #000011;
 }
 
 #root {
@@ -9,5 +10,33 @@ body {
   height: 100vh;
   margin: 0;
   padding: 0;
-  background: #ffffff;
+  background: #000011;
+}
+
+/* Graph container styles for enhanced visuals */
+.graph-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Add glow effects to the canvas for enhanced edges */
+canvas {
+  filter: contrast(1.2) brightness(1.1) saturate(1.3);
+}
+
+/* Enhanced panel styling with dark theme */
+.panel {
+  backdrop-filter: blur(10px);
+  background: rgba(10, 10, 30, 0.9) !important;
+  border: 1px solid rgba(100, 200, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 100, 200, 0.3);
+  color: #ffffff !important;
+}
+
+/* Tooltip glow effect */
+.tooltip {
+  background: rgba(0, 0, 20, 0.95) !important;
+  border: 1px solid rgba(100, 200, 255, 0.4);
+  box-shadow: 0 0 20px rgba(0, 150, 255, 0.4);
 }
