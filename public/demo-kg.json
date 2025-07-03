@@ -1,0 +1,726 @@
+{
+  "nodes": [
+    {
+      "id": "cls_001",
+      "name": "UserAuthService",
+      "type": "Class",
+      "description": "Handles user authentication and session management",
+      "recommendation": "Well-structured class, maintain current quality",
+      "confidence": 0.92,
+      "reasoning": "Clear naming, single responsibility, excellent for AI assistance understanding",
+      "group": 1
+    },
+    {
+      "id": "func_001",
+      "name": "validateCredentials",
+      "type": "Function",
+      "description": "Validates user login credentials against database",
+      "recommendation": "Good function with clear purpose",
+      "confidence": 0.88,
+      "reasoning": "Descriptive name helps AI assistance suggest similar validation patterns",
+      "group": 2
+    },
+    {
+      "id": "var_001",
+      "name": "API_SECRET_KEY",
+      "type": "Variable",
+      "description": "Hardcoded API secret key in source code",
+      "recommendation": "Move to environment variables immediately",
+      "confidence": 0.15,
+      "reasoning": "Security vulnerability, hardcoded secrets prevent AI assistance from suggesting secure patterns",
+      "group": 3
+    },
+    {
+      "id": "func_002",
+      "name": "doStuff",
+      "type": "Function",
+      "description": "Function with unclear naming and purpose",
+      "recommendation": "Rename to describe actual functionality",
+      "confidence": 0.25,
+      "reasoning": "Non-descriptive name confuses AI assistance context understanding",
+      "group": 2
+    },
+    {
+      "id": "cls_002",
+      "name": "DatabaseConnector",
+      "type": "Class",
+      "description": "Manages database connections and query execution",
+      "recommendation": "Solid implementation with proper error handling",
+      "confidence": 0.85,
+      "reasoning": "Well-documented class enables accurate AI assistance suggestions",
+      "group": 1
+    },
+    {
+      "id": "func_003",
+      "name": "executeQuery",
+      "type": "Function",
+      "description": "Executes SQL queries with parameter binding",
+      "recommendation": "Good security practices with prepared statements",
+      "confidence": 0.90,
+      "reasoning": "Secure coding patterns help AI assistance understand best practices",
+      "group": 2
+    },
+    {
+      "id": "var_002",
+      "name": "x",
+      "type": "Variable",
+      "description": "Single letter variable with unclear meaning",
+      "recommendation": "Use descriptive variable names",
+      "confidence": 0.10,
+      "reasoning": "Poor naming makes code incomprehensible to development tools",
+      "group": 3
+    },
+    {
+      "id": "mod_001",
+      "name": "auth.js",
+      "type": "Module",
+      "description": "Authentication module with clean exports",
+      "recommendation": "Well-organized module structure",
+      "confidence": 0.87,
+      "reasoning": "Clear module boundaries help AI assistance understand dependencies",
+      "group": 4
+    },
+    {
+      "id": "api_001",
+      "name": "/api/users/login",
+      "type": "Endpoint",
+      "description": "RESTful login endpoint with proper HTTP methods",
+      "recommendation": "Follows REST conventions excellently",
+      "confidence": 0.93,
+      "reasoning": "Standard API patterns enable accurate AI assistance route suggestions",
+      "group": 5
+    },
+    {
+      "id": "api_002",
+      "name": "/do-thing",
+      "type": "Endpoint",
+      "description": "Poorly named endpoint with unclear purpose",
+      "recommendation": "Use descriptive, RESTful endpoint naming",
+      "confidence": 0.20,
+      "reasoning": "Unclear naming prevents AI assistance from understanding API purpose",
+      "group": 5
+    },
+    {
+      "id": "var_003",
+      "name": "userConfig",
+      "type": "Variable",
+      "description": "Configuration object for user preferences",
+      "recommendation": "Well-named configuration variable",
+      "confidence": 0.82,
+      "reasoning": "Descriptive naming helps AI assistance suggest similar config patterns",
+      "group": 3
+    },
+    {
+      "id": "func_004",
+      "name": "hashPassword",
+      "type": "Function",
+      "description": "Securely hashes passwords using bcrypt",
+      "recommendation": "Excellent security implementation",
+      "confidence": 0.95,
+      "reasoning": "Security best practices provide perfect examples for AI assistance",
+      "group": 2
+    },
+    {
+      "id": "cls_003",
+      "name": "LegacyUserManager",
+      "type": "Class",
+      "description": "Old user management class with outdated patterns",
+      "recommendation": "Refactor to modern patterns",
+      "confidence": 0.35,
+      "reasoning": "Legacy code patterns confuse modern development tools",
+      "group": 1
+    },
+    {
+      "id": "var_004",
+      "name": "MAGIC_NUMBER_42",
+      "type": "Variable",
+      "description": "Magic number without clear business context",
+      "recommendation": "Replace with named constant explaining business rule",
+      "confidence": 0.30,
+      "reasoning": "Magic numbers without context prevent AI assistance from understanding business logic",
+      "group": 3
+    },
+    {
+      "id": "func_005",
+      "name": "validateEmailFormat",
+      "type": "Function",
+      "description": "Validates email format using regex patterns",
+      "recommendation": "Good validation with clear regex",
+      "confidence": 0.78,
+      "reasoning": "Standard validation patterns help AI assistance suggest similar validators",
+      "group": 2
+    },
+    {
+      "id": "mod_002",
+      "name": "utils.js",
+      "type": "Module",
+      "description": "Mixed utility functions in single module",
+      "recommendation": "Split into focused, single-purpose modules",
+      "confidence": 0.45,
+      "reasoning": "Generic modules with mixed purposes reduce AI assistance effectiveness",
+      "group": 4
+    },
+    {
+      "id": "cls_004",
+      "name": "PaymentProcessor",
+      "type": "Class",
+      "description": "Handles payment transactions and validations",
+      "recommendation": "Well-designed payment handling system",
+      "confidence": 0.89,
+      "reasoning": "Clear separation of concerns for financial operations",
+      "group": 1
+    },
+    {
+      "id": "func_006",
+      "name": "processPayment",
+      "type": "Function",
+      "description": "Processes credit card payments with validation",
+      "recommendation": "Good implementation with proper error handling",
+      "confidence": 0.84,
+      "reasoning": "Standard payment processing patterns",
+      "group": 2
+    },
+    {
+      "id": "var_005",
+      "name": "CREDIT_CARD_KEY",
+      "type": "Variable",
+      "description": "Hardcoded credit card processing key",
+      "recommendation": "Move to secure vault immediately",
+      "confidence": 0.08,
+      "reasoning": "Critical security vulnerability in payment processing",
+      "group": 3
+    },
+    {
+      "id": "api_003",
+      "name": "/api/payments/process",
+      "type": "Endpoint",
+      "description": "Payment processing endpoint with proper validation",
+      "recommendation": "Secure endpoint following PCI compliance",
+      "confidence": 0.91,
+      "reasoning": "Well-structured financial API endpoint",
+      "group": 5
+    },
+    {
+      "id": "cls_005",
+      "name": "EmailService",
+      "type": "Class",
+      "description": "Email notification and template management",
+      "recommendation": "Good email service implementation",
+      "confidence": 0.86,
+      "reasoning": "Clear email handling with template support",
+      "group": 1
+    },
+    {
+      "id": "func_007",
+      "name": "sendNotificationEmail",
+      "type": "Function",
+      "description": "Sends templated notification emails to users",
+      "recommendation": "Well-implemented notification system",
+      "confidence": 0.83,
+      "reasoning": "Good naming and clear purpose for email notifications",
+      "group": 2
+    },
+    {
+      "id": "var_006",
+      "name": "temp",
+      "type": "Variable",
+      "description": "Temporary variable with unclear scope",
+      "recommendation": "Use descriptive variable names",
+      "confidence": 0.12,
+      "reasoning": "Temporary variables make code hard to understand",
+      "group": 3
+    },
+    {
+      "id": "func_008",
+      "name": "func123",
+      "type": "Function",
+      "description": "Function with numeric suffix and unclear purpose",
+      "recommendation": "Rename to describe actual functionality",
+      "confidence": 0.18,
+      "reasoning": "Numeric function names provide no context to development tools",
+      "group": 2
+    },
+    {
+      "id": "mod_003",
+      "name": "email-templates.js",
+      "type": "Module",
+      "description": "Email template definitions and rendering",
+      "recommendation": "Well-organized template module",
+      "confidence": 0.88,
+      "reasoning": "Clear module structure for email templates",
+      "group": 4
+    },
+    {
+      "id": "cls_006",
+      "name": "CacheManager",
+      "type": "Class",
+      "description": "Redis cache management and invalidation",
+      "recommendation": "Excellent caching implementation",
+      "confidence": 0.92,
+      "reasoning": "Modern caching patterns with clear TTL management",
+      "group": 1
+    },
+    {
+      "id": "func_009",
+      "name": "getCachedData",
+      "type": "Function",
+      "description": "Retrieves data from cache with fallback logic",
+      "recommendation": "Good caching pattern implementation",
+      "confidence": 0.87,
+      "reasoning": "Clear caching function with fallback strategy",
+      "group": 2
+    },
+    {
+      "id": "var_007",
+      "name": "cacheTimeout",
+      "type": "Variable",
+      "description": "Cache timeout configuration in seconds",
+      "recommendation": "Well-named configuration variable",
+      "confidence": 0.85,
+      "reasoning": "Clear naming for cache configuration",
+      "group": 3
+    },
+    {
+      "id": "api_004",
+      "name": "/cache/clear",
+      "type": "Endpoint",
+      "description": "Administrative endpoint to clear cache",
+      "recommendation": "Good admin endpoint with proper authorization",
+      "confidence": 0.89,
+      "reasoning": "Clear administrative API endpoint",
+      "group": 5
+    },
+    {
+      "id": "cls_007",
+      "name": "Logger",
+      "type": "Class",
+      "description": "Application logging and audit trail management",
+      "recommendation": "Solid logging implementation",
+      "confidence": 0.90,
+      "reasoning": "Comprehensive logging with proper levels",
+      "group": 1
+    },
+    {
+      "id": "func_010",
+      "name": "logSecurityEvent",
+      "type": "Function",
+      "description": "Logs security-related events for audit",
+      "recommendation": "Critical security logging function",
+      "confidence": 0.94,
+      "reasoning": "Essential security logging with clear purpose",
+      "group": 2
+    },
+    {
+      "id": "var_008",
+      "name": "a1",
+      "type": "Variable",
+      "description": "Cryptic variable name with no context",
+      "recommendation": "Replace with meaningful variable name",
+      "confidence": 0.05,
+      "reasoning": "Completely unclear variable naming",
+      "group": 3
+    },
+    {
+      "id": "func_011",
+      "name": "calculateUserScore",
+      "type": "Function",
+      "description": "Calculates user engagement score based on activity",
+      "recommendation": "Good business logic implementation",
+      "confidence": 0.81,
+      "reasoning": "Clear business function with descriptive name",
+      "group": 2
+    },
+    {
+      "id": "mod_004",
+      "name": "analytics.js",
+      "type": "Module",
+      "description": "User analytics and metrics collection",
+      "recommendation": "Well-structured analytics module",
+      "confidence": 0.86,
+      "reasoning": "Clear module for analytics functionality",
+      "group": 4
+    },
+    {
+      "id": "cls_008",
+      "name": "FileUploadHandler",
+      "type": "Class",
+      "description": "Handles file uploads with validation and storage",
+      "recommendation": "Secure file upload implementation",
+      "confidence": 0.88,
+      "reasoning": "Proper file handling with security validation",
+      "group": 1
+    },
+    {
+      "id": "func_012",
+      "name": "validateFileType",
+      "type": "Function",
+      "description": "Validates uploaded file types for security",
+      "recommendation": "Critical security validation function",
+      "confidence": 0.93,
+      "reasoning": "Essential file security validation",
+      "group": 2
+    },
+    {
+      "id": "var_009",
+      "name": "UPLOAD_SECRET",
+      "type": "Variable",
+      "description": "Hardcoded file upload encryption secret",
+      "recommendation": "Move to environment configuration",
+      "confidence": 0.22,
+      "reasoning": "Hardcoded secrets in file upload processing",
+      "group": 3
+    },
+    {
+      "id": "api_005",
+      "name": "/api/files/upload",
+      "type": "Endpoint",
+      "description": "File upload endpoint with multipart support",
+      "recommendation": "Well-designed file upload API",
+      "confidence": 0.87,
+      "reasoning": "Standard file upload endpoint pattern",
+      "group": 5
+    },
+    {
+      "id": "cls_009",
+      "name": "NotificationQueue",
+      "type": "Class",
+      "description": "Manages background notification processing",
+      "recommendation": "Good queue implementation with retry logic",
+      "confidence": 0.85,
+      "reasoning": "Proper queue management for notifications",
+      "group": 1
+    },
+    {
+      "id": "func_013",
+      "name": "enqueueNotification",
+      "type": "Function",
+      "description": "Adds notification to processing queue",
+      "recommendation": "Clean queue management function",
+      "confidence": 0.84,
+      "reasoning": "Clear queue operation function",
+      "group": 2
+    },
+    {
+      "id": "var_010",
+      "name": "queueConfig",
+      "type": "Variable",
+      "description": "Queue configuration with retry and timeout settings",
+      "recommendation": "Well-structured configuration object",
+      "confidence": 0.89,
+      "reasoning": "Comprehensive queue configuration",
+      "group": 3
+    },
+    {
+      "id": "mod_005",
+      "name": "notification-worker.js",
+      "type": "Module",
+      "description": "Background worker for notification processing",
+      "recommendation": "Good worker module structure",
+      "confidence": 0.83,
+      "reasoning": "Clear background processing module",
+      "group": 4
+    },
+    {
+      "id": "cls_010",
+      "name": "SecurityMiddleware",
+      "type": "Class",
+      "description": "Request security validation and rate limiting",
+      "recommendation": "Essential security layer implementation",
+      "confidence": 0.91,
+      "reasoning": "Comprehensive security middleware",
+      "group": 1
+    },
+    {
+      "id": "func_014",
+      "name": "checkRateLimit",
+      "type": "Function",
+      "description": "Validates request rate limits per user",
+      "recommendation": "Critical rate limiting implementation",
+      "confidence": 0.92,
+      "reasoning": "Essential API protection function",
+      "group": 2
+    },
+    {
+      "id": "var_011",
+      "name": "data123",
+      "type": "Variable",
+      "description": "Generic variable name with numeric suffix",
+      "recommendation": "Use specific, descriptive variable name",
+      "confidence": 0.14,
+      "reasoning": "Generic naming with numbers provides no context",
+      "group": 3
+    },
+    {
+      "id": "api_006",
+      "name": "/health",
+      "type": "Endpoint",
+      "description": "Health check endpoint for load balancer",
+      "recommendation": "Standard health check implementation",
+      "confidence": 0.95,
+      "reasoning": "Well-implemented health monitoring endpoint",
+      "group": 5
+    },
+    {
+      "id": "func_015",
+      "name": "generateReport",
+      "type": "Function",
+      "description": "Generates user activity reports with charts",
+      "recommendation": "Good reporting function with clear purpose",
+      "confidence": 0.86,
+      "reasoning": "Clear reporting functionality",
+      "group": 2
+    },
+    {
+      "id": "var_012",
+      "name": "reportConfig",
+      "type": "Variable",
+      "description": "Report generation configuration parameters",
+      "recommendation": "Well-named configuration for reporting",
+      "confidence": 0.88,
+      "reasoning": "Clear configuration naming for reports",
+      "group": 3
+    },
+    {
+      "id": "mod_006",
+      "name": "report-generator.js",
+      "type": "Module",
+      "description": "Report generation and export functionality",
+      "recommendation": "Well-organized reporting module",
+      "confidence": 0.87,
+      "reasoning": "Clear module structure for reporting",
+      "group": 4
+    }
+  ],
+  "links": [
+    {
+      "source": "cls_001",
+      "target": "func_001",
+      "label": "contains"
+    },
+    {
+      "source": "cls_001",
+      "target": "func_004",
+      "label": "uses"
+    },
+    {
+      "source": "func_001",
+      "target": "cls_002",
+      "label": "calls"
+    },
+    {
+      "source": "cls_002",
+      "target": "func_003",
+      "label": "contains"
+    },
+    {
+      "source": "func_002",
+      "target": "var_002",
+      "label": "uses"
+    },
+    {
+      "source": "mod_001",
+      "target": "cls_001",
+      "label": "exports"
+    },
+    {
+      "source": "api_001",
+      "target": "cls_001",
+      "label": "routes_to"
+    },
+    {
+      "source": "api_002",
+      "target": "func_002",
+      "label": "routes_to"
+    },
+    {
+      "source": "func_001",
+      "target": "var_003",
+      "label": "reads"
+    },
+    {
+      "source": "cls_003",
+      "target": "var_004",
+      "label": "uses"
+    },
+    {
+      "source": "func_005",
+      "target": "var_003",
+      "label": "validates"
+    },
+    {
+      "source": "mod_002",
+      "target": "func_005",
+      "label": "contains"
+    },
+    {
+      "source": "mod_002",
+      "target": "func_002",
+      "label": "contains"
+    },
+    {
+      "source": "cls_001",
+      "target": "var_001",
+      "label": "accesses"
+    },
+    {
+      "source": "api_001",
+      "target": "func_004",
+      "label": "uses"
+    },
+    {
+      "source": "cls_004",
+      "target": "func_006",
+      "label": "contains"
+    },
+    {
+      "source": "func_006",
+      "target": "var_005",
+      "label": "accesses"
+    },
+    {
+      "source": "api_003",
+      "target": "cls_004",
+      "label": "routes_to"
+    },
+    {
+      "source": "cls_004",
+      "target": "cls_010",
+      "label": "protected_by"
+    },
+    {
+      "source": "cls_005",
+      "target": "func_007",
+      "label": "contains"
+    },
+    {
+      "source": "func_007",
+      "target": "mod_003",
+      "label": "uses"
+    },
+    {
+      "source": "func_008",
+      "target": "var_006",
+      "label": "assigns"
+    },
+    {
+      "source": "cls_006",
+      "target": "func_009",
+      "label": "contains"
+    },
+    {
+      "source": "func_009",
+      "target": "var_007",
+      "label": "reads"
+    },
+    {
+      "source": "api_004",
+      "target": "cls_006",
+      "label": "routes_to"
+    },
+    {
+      "source": "cls_007",
+      "target": "func_010",
+      "label": "contains"
+    },
+    {
+      "source": "func_010",
+      "target": "cls_010",
+      "label": "called_by"
+    },
+    {
+      "source": "func_011",
+      "target": "var_008",
+      "label": "uses"
+    },
+    {
+      "source": "mod_004",
+      "target": "func_011",
+      "label": "exports"
+    },
+    {
+      "source": "cls_008",
+      "target": "func_012",
+      "label": "contains"
+    },
+    {
+      "source": "func_012",
+      "target": "var_009",
+      "label": "decrypts_with"
+    },
+    {
+      "source": "api_005",
+      "target": "cls_008",
+      "label": "routes_to"
+    },
+    {
+      "source": "cls_009",
+      "target": "func_013",
+      "label": "contains"
+    },
+    {
+      "source": "func_013",
+      "target": "var_010",
+      "label": "reads"
+    },
+    {
+      "source": "mod_005",
+      "target": "cls_009",
+      "label": "imports"
+    },
+    {
+      "source": "cls_010",
+      "target": "func_014",
+      "label": "contains"
+    },
+    {
+      "source": "func_014",
+      "target": "var_011",
+      "label": "stores_in"
+    },
+    {
+      "source": "api_006",
+      "target": "cls_007",
+      "label": "logs_via"
+    },
+    {
+      "source": "func_015",
+      "target": "var_012",
+      "label": "configures_with"
+    },
+    {
+      "source": "mod_006",
+      "target": "func_015",
+      "label": "exports"
+    },
+    {
+      "source": "cls_005",
+      "target": "cls_009",
+      "label": "queues_via"
+    },
+    {
+      "source": "cls_002",
+      "target": "cls_007",
+      "label": "logs_to"
+    },
+    {
+      "source": "cls_006",
+      "target": "func_011",
+      "label": "caches"
+    },
+    {
+      "source": "cls_010",
+      "target": "api_001",
+      "label": "protects"
+    },
+    {
+      "source": "cls_010",
+      "target": "api_003",
+      "label": "protects"
+    },
+    {
+      "source": "cls_010",
+      "target": "api_005",
+      "label": "protects"
+    }
+  ]
+}
